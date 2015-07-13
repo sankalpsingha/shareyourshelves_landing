@@ -7,6 +7,7 @@
         coffee = require('gulp-coffee'),
         sass = require('gulp-sass'),
         autoprefixer = require('gulp-autoprefixer'),
+        cache = require('gulp-cache'),
         connect = require('gulp-connect'),
         bower = require('gulp-bower'),
         imagemin = require('gulp-imagemin'),
@@ -19,7 +20,7 @@
     gulp.task('jade', function () {
         return gulp.src('src/templates/**/*.jade')
             .pipe(jade({
-                pretty: true,  // uncompressed
+                pretty: true  // uncompressed
             }))
             .pipe(gulp.dest('builds/development'))
             .pipe(connect.reload());
@@ -61,11 +62,13 @@
     gulp.task('images', function () {
        return gulp.src('src/images/*')
            .pipe(
-           imagemin({
+           cache(imagemin({
+               optimizationLevel: 3,
+               interlaced: true,
                progressive: true,
                svgoPlugins: [{removeViewBox: false}],
                use: [pngquant()]
-           }))
+           })))
            .pipe(gulp.dest('builds/development/images/'))
            .pipe(connect.reload());
     });
@@ -75,4 +78,4 @@
             .pipe(gulp.dest('builds/development/libs'));
     });
 
-    gulp.task('default', ['coffee', 'sass', 'jade', 'watch', 'connect']);
+    gulp.task('default', ['coffee', 'sass', 'jade', 'watch', 'connect', 'images']);
