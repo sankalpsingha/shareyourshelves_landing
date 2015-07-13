@@ -1,5 +1,24 @@
-$red : #c33;
+@import "bourbon/bourbon";
+@import "neat/neat";
 
-body {
-  color: #000;
+/* These are the color palette variables. */
+$bg-color : #f1f1f1;
+$blue-color: #84c2d1;
+$form-inner : #f4e4c1;
+$form-button : #ec8b5f;
+$font-text : #579698;
+
+
+
+body{
+  background-color: $bg-color;
+}
+
+.container{
+  @include outer-container(960px);
+}
+
+header{
+  height: 150px;
+  background-color: $blue-color;
 }

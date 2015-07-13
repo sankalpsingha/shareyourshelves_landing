@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     coffee = require('gulp-coffee'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    connect = require('gulp-connect');
+    connect = require('gulp-connect'),
+    bower = require('gulp-bower');
 
 
 var gutil = require('gulp-util');
@@ -53,5 +54,11 @@ var sourcemaps = require('gulp-sourcemaps');
         livereload: true,
       })
     });
+
+
+gulp.task('bower', function() {
+    return bower()
+        .pipe(gulp.dest('builds/development/libs'));
+});
 
     gulp.task('default', ['coffee', 'sass', 'jade', 'watch', 'connect']);
