@@ -11,7 +11,7 @@ $font-text : #579698;
 
 $mobile-break : 550px;
 
-$mobile: max-width 480px 4;
+$mobile: 480px;
 
 body{
   background-color: $bg-color;
@@ -159,6 +159,16 @@ header{
 
 
   }
+
+  .no-spam{
+    position: absolute;
+    right: 20px;
+    top: -70px;
+    width: 190px;
+    //@media (max-width: $mobile) {
+    //  width: 100px;
+    //}
+  }
 }
 
 
@@ -175,10 +185,6 @@ footer{
     padding-top: 20px;
   }
 }
-
-
-
-
 
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -198,4 +204,11 @@ footer{
 
 .white {
   color: #ffffff;
+}
+
+
+@media (max-width: 380px) {
+  h1{
+    font-size: 25px;
+  }
 }
