@@ -1,11 +1,50 @@
 doctype html
 html
-  head
-    title This is a test
-    link(rel="stylesheet", href="libs/normalize.css/normalize.css")
-    link(rel="stylesheet", href="css/main.css")
-  body
-    header
-    script(src='js/main.js')
+    head
+        title This is a test
+        link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+        link(rel="stylesheet", href="css/main.css")
+    body
+        header
+            img(src="images/sys-logo.png", alt="SYS Logo", width=130, class="sys-logo")
+
+        .section1
+            .container
+                .row
+                    .col-md-6.col-sm-12
+                        h1  Read More... Save More... <br />
+                            | Share the Joy Of Reading!
+
+                        p Come, sign up with us if you say yes to any of the following.
+                        ul
+                            li  Holding a book in your hand gives you a high.
+                            li  Flipping through the pages, feeling the touch and smell of a book is part of how you define ‘reading’.
+                            li  You want to read more out of your reading budget.
+
+        img(src="images/sys-bookshelf.svg", alt="sys-bookshef", class="bookshelf hidden-sm hidden-xs")
+
+        .section2
+            img(src="images/boy.svg", alt="boy image", class="boy-middle img-img-responsive")
+
+        .section3
+            .container
+                .row
+                    .col-md-6
+                        .embed-container
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/xtDym9Iasbo?showinfo=0&iv_load_policy=3&controls=0" frameborder="0" allowfullscreen></iframe>
+
+                    .col-md-6
+                        form.subscribe
+                            input(type="email", placeholder="Enter your email here...")
+                            button(type="submit")
+                                .fa.fa-check.white
+                        p Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. Curabitur nisi. Sed magna purus, fermentum eu, tincidunt eu, varius ut, felis. Donec vitae orci sed dolor rutrum auctor. In auctor lobortis lacus.
+                            | Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. Aliquam erat volutpat. Proin magna. Etiam rhoncus.
+
+        footer
+            p Copyright 2015 © ShareYourShelves
+
+
+        script(src='js/main.js')
       
                                                                                                                                                                               

@@ -1,5 +1,6 @@
-@import "bourbon/bourbon";
-@import "neat/neat";
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
 /* These are the color palette variables. */
 $bg-color : #f1f1f1;
@@ -8,17 +9,193 @@ $form-inner : #f4e4c1;
 $form-button : #ec8b5f;
 $font-text : #579698;
 
+$mobile-break : 550px;
 
+$mobile: max-width 480px 4;
 
 body{
   background-color: $bg-color;
+  font-family: 'Lato', sans-serif;
+  color: $font-text;
 }
 
-.container{
-  @include outer-container(960px);
+
+h1{
+  font-size: 2em;
+  margin-bottom: 10px;
 }
+
+p, li{
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 2em;
+}
+
 
 header{
   height: 150px;
   background-color: $blue-color;
+}
+
+.sys-logo{
+  display: block;
+  margin: auto;
+  padding-top: 30px;
+}
+
+
+.section1{
+  position: relative;
+  height: 620px;
+
+  .row{
+    padding: 40px 20px;
+  }
+}
+
+.bookshelf{
+  position: absolute;
+  right: -2px;
+  top: 40%;
+}
+
+
+.section2{
+  height: 200px;
+  background-color: $blue-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 980px) {
+    height: 150px;
+  }
+}
+
+
+.boy-middle{
+  margin-top: -220px;
+  @media (max-width: $mobile-break) {
+    margin-top: -100px;
+  }
+
+  @media (max-width: 430px) {
+    width: 400px;
+    margin-top: 0px;
+  }
+}
+
+.section3{
+  margin-top: 60px;
+  p{
+    margin-top: 20px;
+    line-height: 1.3em;
+  }
+
+
+}
+
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16/9 ratio */
+  padding-top: 30px; /* IE6 workaround*/
+  height: 0;
+  overflow: hidden;
+}
+
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.subscribe {
+
+  @media (max-width: 980px) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  position: relative;
+
+  input[type=email] {
+    //@include appearance(none);
+    @include box-sizing(border-box);
+    @include transition(border-color);
+    padding: 10px;
+    background-color: $form-inner;
+    border-style: none;
+
+    border-radius: 10px;
+
+    //border: 1px solid $base-border-color;
+    display: block;
+    font-size: 1em;
+    font-style: italic;
+    margin: 0;
+    //padding: ($base-spacing / 3) ($base-spacing / 3);
+    position: relative;
+    width: 100%;
+  }
+
+  button[type=submit] {
+    position : absolute;
+    top: 0em;
+    right: 0em;
+    botton: 0em;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-style: none;
+    outline: none;
+    padding: 10px;
+    background-color: $form-button;
+
+
+  }
+}
+
+
+
+
+
+footer{
+  margin-top: 60px;
+  height: 80px;
+  background-color: $blue-color;
+  text-align: center;
+  p{
+    color: #fff;
+    padding-top: 20px;
+  }
+}
+
+
+
+
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #203c62;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #203c62;
+  opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #203c62;
+  opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    #203c62;
+}
+
+.white {
+  color: #ffffff;
 }
